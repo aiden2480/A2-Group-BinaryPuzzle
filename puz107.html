@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>v1.07 Binary Puzzle 6x6</title>
+
+    <!-- Load CSS & JS files -->
+    <link href="CSS/puz107.css" rel="stylesheet">
+    <script src="JS/puz107.js"></script>
+</head>
+
+<body onload="loadGrid(G4)">
+    <!-- Load Array G4 -->
+    <form id="input">
+        <h1>v1.07 Binary Puzzle Game (6x6)</h1>
+        <h2>Create 2D array for easier row and column reference</h2>
+        <p>Return to <a href="index.html">home</a></p> <!-- Linking Home Page -->
+        <p>&nbsp;</p>
+
+        <!-- Naming convention B(1-6?Row)_(1-6?Col) -->
+        <table class="gameboard">
+            <tr>
+                <td>
+                    <input id="B1_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B1_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B1_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B1_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B1_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B1_6" type="text" class="gameboard" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="B2_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B2_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B2_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B2_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B2_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B2_6" type="text" class="gameboard" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="B3_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B3_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B3_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B3_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B3_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B3_6" type="text" class="gameboard" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="B4_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B4_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B4_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B4_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B4_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B4_6" type="text" class="gameboard" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="B5_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B5_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B5_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B5_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B5_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B5_6" type="text" class="gameboard" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="B6_1" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B6_2" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B6_3" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B6_4" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B6_5" type="text" class="gameboard" /></td>
+                <td>
+                    <input id="B6_6" type="text" class="gameboard" /></td>
+            </tr>
+        </table>
+        <br />
+        
+        View of the 1D array:<br />
+        <textarea id="arrayView1D" cols="30" rows="5"></textarea><br /><br />
+        
+        View of the 2D array:<br />
+        <textarea id="arrayView2D" cols="30" rows="5"></textarea><br /><br />
+
+        View of 1 element ([3][2]):<br />
+        <textarea id="arrayViewCell" cols="30" rows="2"></textarea>
+</form>
+</body>
+</html>
