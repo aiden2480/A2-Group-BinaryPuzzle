@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>v1.07 Binary Puzzle 6x6</title>
 
-    <!-- Load CSS & JS files -->
+    <!-- Load CSS/JS files, link icon -->
     <link href="CSS/puz107.css" rel="stylesheet">
     <script src="JS/puz107.js"></script>
+	<link rel="icon" href="images/techEdIcon.png">
 </head>
 
 <body onload="loadGrid(G4)">
@@ -107,14 +108,14 @@
         </table>
         <br />
         
-        View of the 1D array:<br />
+        <p class="arrViewText">View of the 1D array:</p>
         <textarea id="arrayView1D" cols="30" rows="5"></textarea><br /><br />
         
-        View of the 2D array:<br />
-        <textarea id="arrayView2D" cols="30" rows="5"></textarea><br /><br />
+        <p class="arrViewText">View of the 2D array:</p>
+        <textarea id="arrayView2D" cols="30" rows="6"></textarea><br /><br />
 
-        View of 1 element ([3][2]):<br />
+        <p class="arrViewText">View of 1 element ([3][2]):</p>
         <textarea id="arrayViewCell" cols="30" rows="2"></textarea>
-</form>
+    </form>
 </body>
 </html>
