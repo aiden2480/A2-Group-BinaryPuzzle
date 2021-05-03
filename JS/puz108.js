@@ -1,5 +1,4 @@
 // 21/04/21 Aiden - Added 6x6 grid templates
-// G1 is used 
 
 var G01 = [1, null, 0, null, 0, 0, null, 1, null, 0, 0, null, null, null, null, null, null, 0, 0, null, null, 1, null, null, 1, 0, null, 1, 1, null, null, 0, null, null, 1, 1];
 var G02 = [null, null, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, 1, null, null, null, null, 0, null, null, 1, null, 1, null, null, null, null, null, null, null, 0, 0, null];
@@ -46,6 +45,7 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
     console.log(grid);
     document.getElementById("arrayView1D").value = `[${grid}]`;
     document.getElementById("arrayView2D").value = concatenation.trim();
+
     document.getElementById("arrayViewCell").value = String(grid[3][2]); // Row 4, Column 3
 }
 

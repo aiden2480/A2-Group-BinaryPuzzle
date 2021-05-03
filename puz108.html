@@ -16,6 +16,7 @@
     <form id="input">
         <h1>v1.08 Binary Puzzle Game (6x6)</h1>
         <h2>Create empty buttons for solving and dropdown grid selector</h2>
+
         <p>Return to <a href="index.html">home</a></p> <!-- Linking Home Page -->
         <p>&nbsp;</p>
 
@@ -143,7 +144,7 @@
             </tr>
         </table>
         <br />
-
+   
         <select id="cboPuzNo" onchange="loadGrid(eval(value))">
             <!--<select id="cboPuzNo">-->
             <option value="GT">Test 1-36</option>
@@ -171,6 +172,7 @@
         <input id="Button1" type="button" onclick="SolveColPairs()" value="ColPairs" />
         <input id="Button1" type="button" onclick="SolveNumberTrios()" value="Trios" />
         <input id="Button1" type="button" onclick="CompleteRowsCols()" value="Complete" />
+
 
         <p class="arrViewText">View of the 1D array:</p>
         <textarea id="arrayView1D" cols="30" rows="5"></textarea><br /><br />
