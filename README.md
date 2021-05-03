@@ -5,6 +5,9 @@
     <img src="https://img.shields.io/github/repo-size/aiden2480/A2-UniTech-BinaryPuzzle?color=1db954&logoColor=191414&style=flat-square" alt="GitHub repo size">
 </div>
 
+## GitHub Pages
+[Link here](https://aiden2480.github.io/A2-UniTech-BinaryPuzzle/)
+
 ## When updating
  - [ ] Setup git
      - [ ] Switch to your individual branch with `git checkout name`
