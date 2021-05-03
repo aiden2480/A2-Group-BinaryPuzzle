@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>v1.07 Binary Puzzle 6x6</title>
+    <title>v1.08 Binary Puzzle 6x6</title>
 
     <!-- Load CSS/JS files, link icon -->
     <link href="CSS/puz108.css" rel="stylesheet">
@@ -11,11 +11,11 @@
 	<link rel="icon" href="images/techEdIcon.png">
 </head>
 
-<body onload="loadGrid(G4)">
+<body onload="loadGrid(G04)">
     <!-- Load Array G4 -->
     <form id="input">
-        <h1>v1.07 Binary Puzzle Game (6x6)</h1>
-        <h2>Create 2D array for easier row and column reference</h2>
+        <h1>v1.08 Binary Puzzle Game (6x6)</h1>
+        <h2>Create empty buttons for solving and dropdown grid selector</h2>
         <p>Return to <a href="index.html">home</a></p> <!-- Linking Home Page -->
         <p>&nbsp;</p>
 
@@ -144,7 +144,7 @@
         </table>
         <br />
 
-        <select id="cboPuzNo" onchange="LoadGrid(eval(value))">
+        <select id="cboPuzNo" onchange="loadGrid(eval(value))">
             <!--<select id="cboPuzNo">-->
             <option value="GT">Test 1-36</option>
             <option value='G01'>Example in Q</option>
@@ -161,19 +161,16 @@
             <option value="G12">Game 12</option>
             <option value="G13">Game 13</option>
         </select>
-        <p>
-        <input id="Button1" type="button" value="--Solve repeat--" />
-        </p>
-        <p>
-        <input id="Button1" type="button" value="--Solve once--" />
-        </p>
-        <p>
-        <input id="Button1" type="button" value="Pairs" />
-        <input id="Button1" type="button" value="RowPairs" />
-        <input id="Button1" type="button" value="ColPairs" />
-        <input id="Button1" type="button" value="Trios" />
-        <input id="Button1" type="button" value="Complete" />
-        </p>
+
+        <input id="Button1" type="button" onclick="BinaryPuzzleSolver()"value="--Solve repeat--" />
+        <input id="Button1" type="button" onclick="SolvePuzzle()" value="--Solve once--" />
+        <br />
+
+        <input id="Button1" type="button" onclick="SolveNumberPairs()" value="Pairs" />
+        <input id="Button1" type="button" onclick="SolveRowPairs()" value="RowPairs" />
+        <input id="Button1" type="button" onclick="SolveColPairs()" value="ColPairs" />
+        <input id="Button1" type="button" onclick="SolveNumberTrios()" value="Trios" />
+        <input id="Button1" type="button" onclick="CompleteRowsCols()" value="Complete" />
 
         <p class="arrViewText">View of the 1D array:</p>
         <textarea id="arrayView1D" cols="30" rows="5"></textarea><br /><br />
