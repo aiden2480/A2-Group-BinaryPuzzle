@@ -4,42 +4,22 @@
 <head>
     <meta charset="utf-8">
     <title>Home - Binary Puzzle 6x6</title>
-	<link rel="icon" href="images/techEdIcon.png">
-    <style type="text/css">
-        /* 30/4/21 Aiden - Update CSS */
-        body {
-            background-color: #2C2F33;
-            font-family: "Consolas";
-        }
-
-        /* Text formatting */
-        h1, h2 {
-            color: #3498db;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        p {
-            color: #53A2BE;
-        }
-        a {
-            color: #176087;
-        }
-        
-        /* Restyle images */
-        div#question img {
-            border: 4px solid #53A2BE;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            display: block;
-        }    </style>
+	  <link rel="icon" href="images/techEdIcon.png">
+    <link href="CSS/index.css" rel="stylesheet"> <!-- CSS is moved to a different file -->
 </head>
 
 <body>
     <!-- 30/4/21 Aiden - Update document formatting -->
     <h1>Binary Puzzle Game (6x6)</h1>
-    <h2>UniTech</h2>
-    <a href="https://github.com/aiden2480/A2-UniTech-BinaryPuzzle#readme">GitHub repository</a>
-    <p>&nbsp;</p>
+    <div id="company">
+        <p class="test" style="transform: translateY(-.5vh);">By</p>
+        <h2 class="test">UniTech</h2>
+    </div>
+    <a href="https://github.com/aiden2480/A2-UniTech-BinaryPuzzle" id="no_deco" target="_blank">
+        <button type="submit"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" style="width:8vh;">
+            <span id="button_text">Repository</span>
+        </button>
+    </a>
 
     <!-- Version links -->
     <h2>Links to versions are below:</h2>
@@ -51,11 +31,11 @@
     <p><a href="puz106.html" target="_blank">V06</a> - Condense 6 loops into 2 nested loops</p>
     <p><a href="puz107.html" target="_blank">V07</a> - Create 2D array for easier row and column reference</p>
     <p><a href="puz108.html" target="_blank">V08</a> - Create empty buttons for solving and dropdown grid selector</p>
-    <p>&nbsp;</p>
+    <p><a href="puz109.html" target="_blank">V09</a> - Global Row, Column & Grid + Display Function</p>
 
     <!-- Instructions -->
+    <h2>The question we are solving is below in images:</h2>
     <div id="question">
-        <h2>The question we are solving is below in images:</h2>
         <img src="images/22_QuestionSetup.png" width="604" height="884" alt="" />
         <img src="images/22a-2D_arrays.png" width="600" height="134" alt="" />
         <img src="images/22b-DataTypes.png" width="580" height="44" alt="" />
@@ -64,12 +44,13 @@
         <img src="images/22e-reusableCode.png" width="578" height="76" alt="" />
         <br />
 
-        <p>A desk check is included to assist with what this code is actually doing: </p>
+        <p style="width: 100vh;">A desk check is included to assist with what this code is actually doing: </p>
         <img src="images/22fi-SolveRowPairs-DeskCheck.png" width="978" height="813" alt="" />
         <img src="images/22fii-Lines6and7.png" width="576" height="40" alt="" />
         <img src="images/22Gi-writeAlgorithm.png" width="598" height="132" alt="" />
         <img src="images/22Gii-driverForTesting.png" width="582" height="36" alt="" />
-        <p>End of Question</p>
     </div>
+    <p>End of Question.</p>
 </body>
+  
 </html>
