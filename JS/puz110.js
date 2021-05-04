@@ -41,7 +41,7 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
     }
 
     console.log(grid);
-    document.getElementById("arrayView1D").value = `[${grid.slice(0, -1)}]`;
+    document.getElementById("arrayView1D").value = `[${grid}]`;
     document.getElementById("arrayView2D").value = concatenation.trim();
     document.getElementById("arrayViewCell").value = String(grid[3][2]); // Row 4, Column 3
 }
