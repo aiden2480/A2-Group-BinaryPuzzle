@@ -18,7 +18,6 @@
         <h2>Global Row, Column & Grid + Display Function</h2>
 
         <p>Return to <a href="index.html">home</a></p> <!-- Linking Home Page -->
-        <p>&nbsp;</p>
 
         <!-- Naming convention B(1-6?Row)_(1-6?Col) -->
         <table class="gameboard">
@@ -144,35 +143,36 @@
             </tr>
         </table>
         <br />
-   
-        <select id="cboPuzNo" onchange="loadGrid(eval(value))">
-            <!--<select id="cboPuzNo">-->
-            <option value="GT">Test 1-36</option>
-            <option value='G01'>Example in Q</option>
-            <option value="G02">Game 2</option>
-            <option value="G03">Game 3</option>
-            <option value="G04">Game 4</option>
-            <option value="G05">Game 5</option>
-            <option value="G06">Game 6</option>
-            <option value="G07">Game 7</option>
-            <option value="G08">Game 8</option>
-            <option value="G09">Game 9</option>
-            <option value="G10">Game 10</option>
-            <option value="G11">Game 11</option>
-            <option value="G12">Game 12</option>
-            <option value="G13">Game 13</option>
-        </select>
+        
+        <div id = "options">  
+            <select id="cboPuzNo" onchange="loadGrid(eval(value))">
+                <!--<select id="cboPuzNo">-->
+                <option value="GT">Test 1-36</option>
+                <option value='G01'>Example in Q</option>
+                <option value="G02">Game 2</option>
+                <option value="G03">Game 3</option>
+                <option value="G04">Game 4</option>
+                <option value="G05">Game 5</option>
+                <option value="G06">Game 6</option>
+                <option value="G07">Game 7</option>
+                <option value="G08">Game 8</option>
+                <option value="G09">Game 9</option>
+                <option value="G10">Game 10</option>
+                <option value="G11">Game 11</option>
+                <option value="G12">Game 12</option>
+                <option value="G13">Game 13</option>
+            </select>
+ 
+            <input id="Button1" type="button" onclick="BinaryPuzzleSolver()"value="--Solve repeat--" />
+            <input id="Button1" type="button" onclick="SolvePuzzle()" value="--Solve once--" />
+            <br />
 
-        <input id="Button1" type="button" onclick="BinaryPuzzleSolver()"value="--Solve repeat--" />
-        <input id="Button1" type="button" onclick="SolvePuzzle()" value="--Solve once--" />
-        <br />
-
-        <input id="Button1" type="button" onclick="SolveNumberPairs()" value="Pairs" />
-        <input id="Button1" type="button" onclick="SolveRowPairs()" value="RowPairs" />
-        <input id="Button1" type="button" onclick="SolveColPairs()" value="ColPairs" />
-        <input id="Button1" type="button" onclick="SolveNumberTrios()" value="Trios" />
-        <input id="Button1" type="button" onclick="CompleteRowsCols()" value="Complete" />
-
+            <input id="Button1" type="button" onclick="SolveNumberPairs()" value="Pairs" />
+            <input id="Button1" type="button" onclick="SolveRowPairs()" value="RowPairs" />
+            <input id="Button1" type="button" onclick="SolveColPairs()" value="ColPairs" />
+            <input id="Button1" type="button" onclick="SolveNumberTrios()" value="Trios" />
+            <input id="Button1" type="button" onclick="CompleteRowsCols()" value="Complete" />
+        </div>
 
         <p class="arrViewText">View of the 1D array:</p>
         <textarea id="arrayView1D" cols="30" rows="5"></textarea><br /><br />
