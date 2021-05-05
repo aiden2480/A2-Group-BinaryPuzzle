@@ -3,12 +3,18 @@
 
 body {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #ffecd9;
     color: #424242;
     padding: 1vh;
-    flex-direction: column;
-    align-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     font-family: 'Raleway', Sans-serif;
 }
 
@@ -32,9 +38,15 @@ a {
 }
 
 #company{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     margin: 1vh 0vh;
 }
 
@@ -45,16 +57,25 @@ a {
 
 button {
     /* Flex */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     /* Transition setup */
+    background: -webkit-gradient(linear, left top, right top, from(#a2ccb6), color-stop(50%, #fceeb5), to(#ee786e));
+    background: -o-linear-gradient(left, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
     background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
     background-size: 500%;
     /* Button Shading */
     border: none;
     border-radius: 1vh;
-    box-shadow: 0.1vh 0.5vh .5vh rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0.1vh 0.5vh .5vh rgba(0, 0, 0, 0.15);
+            box-shadow: 0.1vh 0.5vh .5vh rgba(0, 0, 0, 0.15);
     /* Font */
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -94,12 +115,30 @@ button:hover {
     -webkit-animation-fill-mode: forwards;
 }
 
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
     100% {
         background-position: 100%;
+    }
+}
+
+@-webkit-keyframes gradient_backwards {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
@@ -127,5 +166,6 @@ span #button_text{
 
 #question img{
     margin: 1vh 0vh;
-    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
 }
