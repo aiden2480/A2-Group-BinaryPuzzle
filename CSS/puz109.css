@@ -55,7 +55,8 @@ p.arrViewText {
 }
 
 textarea{
-    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
 }
 #options{
     margin: 0vh 0vh 1.5vh 0vh;
