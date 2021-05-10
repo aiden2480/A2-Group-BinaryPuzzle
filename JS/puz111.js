@@ -21,7 +21,6 @@ var grid = [];
 function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
     grid = [];
     var gridCol = []; 
-    var concatenation = "";
 
     // 30/4/21 Aiden - Convert 1D array to 2D
     for (let j = 0; j < row; j++) {
@@ -32,24 +31,25 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
         gridCol = []; // clear this array ready for the next row
     }
 
-    // Value assignment is based on the 2D 'grid' instead of 'g'
+    // 10/5/21 Aiden - Update grid and debug textarea
     DisplayGrid(grid)
+}
+
+function DisplayGrid(G2D){
+    var concatenation = "";
 
     // 30/4/21 Aiden - Concatenate
     for (i = 0; i < row; i++) {
         concatenation += `[${grid[i]}]\n`;
     }
 
-    console.log(grid);
     document.getElementById("arrayView1D").value = `[${grid}]`;
     document.getElementById("arrayView2D").value = concatenation.trim();
     document.getElementById("arrayViewCell").value = String(grid[3][2]); // Row 4, Column 3
-}
 
-function DisplayGrid(G_Row_Col){
     for (let o = 0; o < row; o++) { // 'o' looping through row (min := 1, max :=6)
         for (let i = 0; i < col; i++) { // 'i' looping through column (min := 1, max := 6)
-            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G_Row_Col[o][i]; 
+            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G2D[o][i]; 
         }
     }
 }
@@ -67,7 +67,22 @@ function SolveNumberPairs() {
 }
 
 function SolveRowPairs() {
-    alert("Not coded yet");
+    var GridSize = 6;
+    for (let Row = 0; Row < GridSize; Row++) {
+        for (let Col = 0; Col < GridSize - 1; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col +1]) {
+                if (Col > 0) {
+                    grid[Row][Col - 1] = 1 - grid[Row][Col];
+                }
+                if (Col < GridSize - 2) {
+                    grid[Row][Col + 2] = 1 - grid[Row][Col];
+                }
+            }
+        }
+    }
+
+    // 10/5/21 Aiden - Update grid and debug textarea
+    DisplayGrid(grid);
 }
 
 function SolveColPairs() {
