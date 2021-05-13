@@ -31,25 +31,25 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
         grid.push(gridCol);
         gridCol = []; // clear this array ready for the next row
     }
-
-    // Value assignment is based on the 2D 'grid' instead of 'g'
+    // 10/5/21 Aiden - Update grid and debug textarea
     DisplayGrid(grid)
+}
+
+function DisplayGrid(G2D){
+    var concatenation = "";
 
     // 30/4/21 Aiden - Concatenate
     for (i = 0; i < row; i++) {
         concatenation += `[${grid[i]}]\n`;
     }
 
-    console.log(grid);
     document.getElementById("arrayView1D").value = `[${grid}]`;
     document.getElementById("arrayView2D").value = concatenation.trim();
     document.getElementById("arrayViewCell").value = String(grid[3][2]); // Row 4, Column 3
-}
 
-function DisplayGrid(G_Row_Col){
     for (let o = 0; o < row; o++) { // 'o' looping through row (min := 1, max :=6)
         for (let i = 0; i < col; i++) { // 'i' looping through column (min := 1, max := 6)
-            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G_Row_Col[o][i]; 
+            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G2D[o][i]; 
         }
     }
 }
@@ -67,20 +67,21 @@ function SolveNumberPairs() {
 }
 
 function SolveRowPairs() {
-    for (let o = 0; o < 5; o++){
-        for (let i = 0; i < 5; i++){
-            if (grid[o][i] !== null && grid[o][i] == grid[o][i + 1]){
-                if (i >= 1){ // Checking if there is space on the left
-                    grid[o][i - 1] = (1 - grid[o][i]);
-                } 
-                if (i <= 3){ // Checking if there is space on the right
-                    grid[o][i + 2] = (1 - grid[o][i]);
+    var GridSize = 6;
+    for (let Row = 0; Row < GridSize; Row++) {
+        for (let Col = 0; Col < GridSize - 1; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col +1]) {
+                if (Col > 0) {
+                    grid[Row][Col - 1] = 1 - grid[Row][Col];
+                }
+                if (Col < GridSize - 2) {
+                    grid[Row][Col + 2] = 1 - grid[Row][Col];
                 }
             }
         }
     }
 
-    document.getElementById('arrayView2D').value = grid;
+    // 10/5/21 Aiden - Update grid and debug textarea
     DisplayGrid(grid);
 }
 
