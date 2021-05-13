@@ -21,6 +21,7 @@ var grid = [];
 function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
     grid = [];
     var gridCol = []; 
+    var concatenation = "";
 
     // 30/4/21 Aiden - Convert 1D array to 2D
     for (let j = 0; j < row; j++) {
@@ -30,7 +31,6 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
         grid.push(gridCol);
         gridCol = []; // clear this array ready for the next row
     }
-
     // 10/5/21 Aiden - Update grid and debug textarea
     DisplayGrid(grid)
 }
