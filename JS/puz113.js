@@ -14,13 +14,14 @@ var G11 = [null, 1, null, 1, null, 1, null, null, null, null, null, null, 0, 0, 
 var G12 = [0, null, null, null, null, null, null, 1, 1, null, null, null, null, null, 1, null, null, null, null, null, null, 0, null, null, 0, null, null, 1, null, null, null, null, null, null, null, null];
 var G13 = [null, null, null, 1, null, null, null, null, null, null, null, 0, null, null, null, null, 0, 0, null, null, null, null, 1, null, 1, null, null, null, null, null, null, 0, null, 0, null, 0];
 var GT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
-var row = 6; 
-var col = 6;
+
+var row, col, GridSize;
+row = col = GridSize = 6;
 var grid = [];
 
 function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
+    grid = []; // Restart array when switching game
     var gridCol = []; 
-    var concatenation = "";
 
     // 30/4/21 Aiden - Convert 1D array to 2D
     for (let j = 0; j < row; j++) {
@@ -30,26 +31,25 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
         grid.push(gridCol);
         gridCol = []; // Clear this array ready for the next row
     }
-
-    // Value assignment is based on the 2D 'grid' instead of 'g'
+    // 10/5/21 Aiden - Update grid and debug textarea
     DisplayGrid(grid)
+}
+
+function DisplayGrid(G2D){
+    var concatenation = "";
 
     // 30/4/21 Aiden - Concatenate
     for (i = 0; i < row; i++) {
         concatenation += `[${grid[i]}]\n`;
     }
 
-    console.log(grid);
     document.getElementById("arrayView1D").value = `[${grid}]`;
     document.getElementById("arrayView2D").value = concatenation.trim();
-
     document.getElementById("arrayViewCell").value = String(grid[3][2]); // Row 4, Column 3
-}
 
-function DisplayGrid(G_Row_Col){
     for (let o = 0; o < row; o++) { // 'o' looping through row (min := 1, max :=6)
         for (let i = 0; i < col; i++) { // 'i' looping through column (min := 1, max := 6)
-            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G_Row_Col[o][i]; 
+            document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G2D[o][i]; 
         }
     }
 }
@@ -67,15 +67,56 @@ function SolveNumberPairs() {
 }
 
 function SolveRowPairs() {
-    alert("Not coded yet");
+    for (let Row = 0; Row < GridSize; Row++) {
+        for (let Col = 0; Col < GridSize - 1; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col + 1]) {
+                if (Col > 0) {
+                    grid[Row][Col - 1] = 1 - grid[Row][Col];
+                }
+                if (Col < GridSize - 2) {
+                    grid[Row][Col + 2] = 1 - grid[Row][Col];
+                }
+            }
+        }
+    }
+    // 10/5/21 Aiden - Update grid and debug textarea
+    DisplayGrid(grid);
 }
 
 function SolveColPairs() {
-    alert("Not coded yet");
+    for (let Row = 0; Row < GridSize - 1; Row++) {
+        for (let Col = 0; Col < GridSize; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row + 1][Col]) {
+                if (Row > 0) {
+                    grid[Row - 1][Col] = 1 - grid[Row][Col];
+                }
+                if (Row < GridSize - 2) {
+                    grid[Row + 2][Col] = 1 - grid[Row][Col];
+                }
+            }
+        }
+    }
+    DisplayGrid(grid);
 }
 
 function SolveNumberTrios() {
-    window.alert('SolveNumberTrios has not been coded yet');
+    for (let Row = 0; Row < GridSize; Row++) {
+        for (let Col = 0; Col < GridSize - 2; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col + 2]) {
+                grid[Row][Col+1] = 1 - grid[Row][Col];
+            }
+        }
+    }
+
+    for (let Row = 0; Row < GridSize - 2; Row++) {
+        for (let Col = 0; Col < GridSize; Col++) {
+            if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row + 2][Col]){
+                grid[Row + 1][Col] = 1 - grid[Row][Col];
+            }
+        }
+    }
+
+    DisplayGrid(grid);
 }
 
 function CompleteRowsCols() {
