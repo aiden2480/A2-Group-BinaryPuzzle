@@ -6,7 +6,7 @@
 </div>
 
 ## GitHub Pages
-[Link here](https://aiden2480.github.io/A2-UniTech-BinaryPuzzle/)
+[Link here](https://minkdang.github.io/UniTech_BinaryPuzzle/)
 
 ## Licence
 This project is licensed under the [MIT licence](https://choosealicense.com/licenses/mit/#). This choice has been justified in the [Wiki tab](https://github.com/aiden2480/A2-UniTech-BinaryPuzzle/wiki).
