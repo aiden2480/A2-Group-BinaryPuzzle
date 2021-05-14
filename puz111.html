@@ -12,9 +12,9 @@
 </head>
 
 <body onload="loadGrid(G01)">
-    <!-- Load Array GT  -->
+    <!-- Load Array G01 -->
     <h1>v1.11 Binary Puzzle Game (6x6)</h1>
-    <h2>Fix grid concatenation in debug</h2>
+    <h2>Solve RowPairs</h2>
 
     <p>Return to <a href="index.html">home</a></p> <!-- Linking Home Page -->
 
@@ -145,8 +145,7 @@
     
     <div id="options">  
         <select id="cboPuzNo" onchange="loadGrid(eval(value))">
-            <option value="GT">Test 1-36</option>
-            <option value="G01">Example in Q</option>
+            <option value="G01">Example in Question</option>
             <option value="G02">Game 2</option>
             <option value="G03">Game 3</option>
             <option value="G04">Game 4</option>
@@ -159,6 +158,7 @@
             <option value="G11">Game 11</option>
             <option value="G12">Game 12</option>
             <option value="G13">Game 13</option>
+            <option value="GT">Test 1-36</option>
         </select>
 
         <input id="Button1" type="button" onclick="BinaryPuzzleSolver()"value="--Solve repeat--" />

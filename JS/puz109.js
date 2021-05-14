@@ -1,5 +1,5 @@
 // 21/04/21 Aiden - Added 6x6 grid templates
-
+// List of possible games ** GT is used in testing **
 var G01 = [1, null, 0, null, 0, 0, null, 1, null, 0, 0, null, null, null, null, null, null, 0, 0, null, null, 1, null, null, 1, 0, null, 1, 1, null, null, 0, null, null, 1, 1];
 var G02 = [null, null, null, null, null, null, null, 1, null, null, null, 1, null, 1, null, 1, null, null, null, null, 0, null, null, 1, null, 1, null, null, null, null, null, null, null, 0, 0, null];
 var G03 = [null, 1, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, null, null, 1, null, null, null, 1, null, null, null, null, null, 0, null, 0, null, null, null, null, null];
@@ -28,7 +28,7 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
             gridCol.push(g[j * col + i]);
         }
         grid.push(gridCol);
-        gridCol = []; // clear this array ready for the next row
+        gridCol = []; // Clear this array ready for the next row
     }
 
     // Value assignment is based on the 2D 'grid' instead of 'g'
@@ -48,7 +48,7 @@ function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
 
 function DisplayGrid(G_Row_Col){
     for (let o = 0; o < row; o++) { // 'o' looping through row (min := 1, max :=6)
-        for (let i = 0; i < col; i++) { // 'i' looping through collumn (min := 1, max := 6)
+        for (let i = 0; i < col; i++) { // 'i' looping through column (min := 1, max := 6)
             document.getElementById("B" + (o + 1) + "_" + (i + 1)).value = G_Row_Col[o][i]; 
         }
     }
