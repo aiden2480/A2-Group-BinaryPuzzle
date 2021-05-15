@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Better support for mobile browsers -->
     <title>v1.14 Binary Puzzle 6x6</title>
 
     <!-- Load CSS/JS files, link icon -->
@@ -20,8 +22,10 @@
         <p>Return to <a href = "index.html">home</a></p> <!-- Linking Home Page -->
     </div>
 
+    <!-- Game interaction -->
     <div id = "options">  
-        <select id = "cboPuzNo" onchange = "loadGrid(eval(value))">
+        <!-- Game selection -->
+        <select id = "cboPuzNo" onchange = "loadGrid(eval(value))"> 
             <option value = "G01">Example in Question</option>
             <option value = "G02">Game 2</option>
             <option value = "G03">Game 3</option>
@@ -38,21 +42,25 @@
             <option value = "GT">Test 1 - 36</option>
         </select>
 
-        <input class = "btn" type = "button" onclick="BinaryPuzzleSolver()" value = "--Solve repeat--" />
-        <input class = "btn" type = "button" onclick="SolvePuzzle()" value = "--Solve once--" />
-        <br />
+        <!-- Game solving options -->
+            <input type = "button" onclick="BinaryPuzzleSolver()" value = "--Solve repeat--" />
+            <input type = "button" onclick="SolvePuzzle()" value = "--Solve once--" />
+            <br />
+        
+        <div>
+            <input type = "button" onclick="SolveNumberPairs()" value = "Pairs" />
+            <input type = "button" onclick="SolveRowPairs()" value = "RowPairs" />
+            <input type = "button" onclick="SolveColPairs()" value = "ColPairs" />
+            <input type = "button" onclick="SolveNumberTrios()" value = "Trios" />
+            <input type = "button" onclick="CompleteRowsCols()" value = "Complete" />
+        </div>
 
-        <input class = "btn" type = "button" onclick="SolveNumberPairs()" value = "Pairs" />
-        <input class = "btn" type = "button" onclick="SolveRowPairs()" value = "RowPairs" />
-        <input class = "btn" type = "button" onclick="SolveColPairs()" value = "ColPairs" />
-        <input class = "btn" type = "button" onclick="SolveNumberTrios()" value = "Trios" />
-        <input class = "btn" type = "button" onclick="CompleteRowsCols()" value = "Complete" />
     </div>
-    <div style = "margin: 1vh;"></div>
+    <!-- Empty space --> <div style = "margin: 1vh;"></div> 
 
-    <!-- Naming convention B(1-6?Row)_(1-6?Col) -->
-    <div id = "parent">
-        <div id = "child">
+    <div id = "game_and_info">
+        <div>
+            <!-- Naming convention B(1-6?Row)_(1-6?Col) -->
             <table class = "gameboard">
                 <tr>
                     <td>
@@ -177,18 +185,19 @@
             </table>
         </div>
 
-        <div id = "side_info">
+        <div>
             <p class = "arrViewText">View of the 1D array:</p>
             <textarea id = "arrayView1D" cols = "30" rows = "4"></textarea>
-            <div style = "margin: 1vh;"></div>
+            <!-- Empty space --> <div style = "margin: 1vh;"></div> 
             <p class = "arrViewText">View of the 2D array:</p>
             <textarea id = "arrayView2D" cols = "30" rows = "6"></textarea>
         </div>
-
     </div>
 
-    <p class = "arrViewText" style = "margin-top: 1vh; transform: translateX(-3.1vh);">View of 1 element ([3][2]):</p>
-    <textarea id = "arrayViewCell" cols = "30" rows = "1"></textarea>
+    <div id = "e_view">   
+        <p class = "arrViewText">View of 1 element ([3][2]):</p>
+        <textarea id = "arrayViewCell" cols = "30" rows = "1"></textarea>
+    </div>
 
 </body>
   
