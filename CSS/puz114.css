@@ -1,0 +1,100 @@
+/* 15/05/21 Design overhaul */
+/* Import Font */
+@import url("https://fonts.googleapis.com/css?family=Raleway"); 
+
+/* Elements */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffecd9;
+    padding: 1vh; 
+    color: #424242;
+    font-family: "Raleway", Sans-serif;
+}
+
+h1 {
+    margin: 0.5vh 0vh;
+    font-size: 4vh;
+}
+
+h2 {
+    font-size: 3vh;
+    font-weight: 590;
+}
+
+p {
+    font-size: 2vh;
+}
+
+a {
+    color: #18a8b8;
+    font-size: 2.3vh;
+}
+
+p.arrViewText {
+    margin: 0;
+}
+
+/* Dropdown - Game selection */
+#options select, #options input, #options {
+    font-size: 1.5vh;
+    margin: 0;
+}
+
+/* Grid */
+.gameboard, td, th {
+    padding: 0;
+    border-collapse: collapse;
+    width: 4.5vh;
+    height: 4.5vh;
+    font-size: 3vh;
+    color: #19699e;
+    vertical-align: middle;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: .3vh solid #7bcebc;
+}
+
+/* Solid dividing line through disabling the cell borders */
+.gameboard input {
+    border: none;
+}
+
+/* Grid and input fields */
+.gameboard, textarea{
+    background-color: #fceeb5;
+    -webkit-box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+}
+
+/* Input fields */
+textarea {
+    font-size: 1.5vh;
+    margin-top: 0.5vh;
+}
+
+/* Parent flexbox contain grid and side information */
+#parent, #child{
+    display: flex;
+}
+
+/* Side infomation */
+#side_info{
+    margin-left: 3vh;
+}
+
+/* Increase compatability for mobile users */
+@media only screen and (max-width: 600px) {
+    #parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #side_info{
+        display: flex;
+        flex-direction: column;
+        margin: 1vh 0vh 0vh 0vh;
+    }
+}

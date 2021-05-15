@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>v1.14 Binary Puzzle 6x6</title>
+
+    <!-- Load CSS/JS files, link icon -->
+    <link href = "CSS/puz114.css" rel = "stylesheet">
+    <script src = "JS/puz114.js"></script>
+	<link rel = "icon" href = "images/unitechsquare.png">
+</head>
+
+<body onload = "loadGrid(G01)">
+    <!-- Load Array G01 -->
+    <div>
+        <h1>v1.14 Binary Puzzle Game (6x6)</h1>
+        <h2>Solve RowPairs and ColPairs simultaneously</h2>
+    
+        <p>Return to <a href = "index.html">home</a></p> <!-- Linking Home Page -->
+    </div>
+
+    <div id = "options">  
+        <select id = "cboPuzNo" onchange = "loadGrid(eval(value))">
+            <option value = "G01">Example in Question</option>
+            <option value = "G02">Game 2</option>
+            <option value = "G03">Game 3</option>
+            <option value = "G04">Game 4</option>
+            <option value = "G05">Game 5</option>
+            <option value = "G06">Game 6</option>
+            <option value = "G07">Game 7</option>
+            <option value = "G08">Game 8</option>
+            <option value = "G09">Game 9</option>
+            <option value = "G10">Game 10</option>
+            <option value = "G11">Game 11</option>
+            <option value = "G12">Game 12</option>
+            <option value = "G13">Game 13</option>
+            <option value = "GT">Test 1 - 36</option>
+        </select>
+
+        <input class = "btn" type = "button" onclick="BinaryPuzzleSolver()" value = "--Solve repeat--" />
+        <input class = "btn" type = "button" onclick="SolvePuzzle()" value = "--Solve once--" />
+        <br />
+
+        <input class = "btn" type = "button" onclick="SolveNumberPairs()" value = "Pairs" />
+        <input class = "btn" type = "button" onclick="SolveRowPairs()" value = "RowPairs" />
+        <input class = "btn" type = "button" onclick="SolveColPairs()" value = "ColPairs" />
+        <input class = "btn" type = "button" onclick="SolveNumberTrios()" value = "Trios" />
+        <input class = "btn" type = "button" onclick="CompleteRowsCols()" value = "Complete" />
+    </div>
+    <div style = "margin: 1vh;"></div>
+
+    <!-- Naming convention B(1-6?Row)_(1-6?Col) -->
+    <div id = "parent">
+        <div id = "child">
+            <table class = "gameboard">
+                <tr>
+                    <td>
+                        <input id = "B1_1" type = "text" class = "gameboard"/>
+                    </td>
+                    <td>
+                        <input id = "B1_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B1_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B1_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B1_5" type = "text" class = "gameboard"/>
+                    </td>
+                    <td>
+                        <input id = "B1_6" type = "text" class = "gameboard"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id = "B2_1" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B2_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B2_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B2_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B2_5" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B2_6" type = "text" class = "gameboard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id = "B3_1" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B3_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B3_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B3_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B3_5" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B3_6" type = "text" class = "gameboard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id = "B4_1" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B4_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B4_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B4_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B4_5" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B4_6" type = "text" class = "gameboard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id = "B5_1" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B5_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B5_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B5_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B5_5" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B5_6" type = "text" class = "gameboard" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id = "B6_1" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B6_2" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B6_3" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B6_4" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B6_5" type = "text" class = "gameboard" />
+                    </td>
+                    <td>
+                        <input id = "B6_6" type = "text" class = "gameboard" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id = "side_info">
+            <p class = "arrViewText">View of the 1D array:</p>
+            <textarea id = "arrayView1D" cols = "30" rows = "4"></textarea>
+            <div style = "margin: 1vh;"></div>
+            <p class = "arrViewText">View of the 2D array:</p>
+            <textarea id = "arrayView2D" cols = "30" rows = "6"></textarea>
+        </div>
+
+    </div>
+
+    <p class = "arrViewText" style = "margin-top: 1vh; transform: translateX(-3.1vh);">View of 1 element ([3][2]):</p>
+    <textarea id = "arrayViewCell" cols = "30" rows = "1"></textarea>
+
+</body>
+  
+</html>

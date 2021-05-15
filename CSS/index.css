@@ -1,3 +1,4 @@
+/* 15/05/21 Design overhaul */
 /* Import Font */
 @import url("https://fonts.googleapis.com/css?family=Raleway"); 
 
@@ -6,6 +7,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #ffecd9;
     color: #424242;
     padding: 1vh;
@@ -16,14 +20,15 @@ body {
     -ms-flex-line-pack: start;
         align-content: flex-start;
     font-family: 'Raleway', Sans-serif;
+    min-width: 100vh;
 }
 
-h1{
+h1 {
     margin: 0.5vh 0vh;
     font-size: 4vh;
 }
 
-h2{
+h2 {
     font-size: 3vh;
     font-weight: 590;
 }
@@ -37,7 +42,7 @@ a {
     font-size: 2.3vh;
 }
 
-#company{
+#company {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -50,12 +55,12 @@ a {
     margin: 1vh 0vh;
 }
 
-#company p, #company h2{
-    margin:0;
-    padding-right: .5vh;
+#company p, #company h2 {
+    margin: 0;
+    padding-right: 0.5vh;
 }
 
-button {
+button  {
     /* Flex */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -67,8 +72,8 @@ button {
         -ms-flex-align: center;
             align-items: center;
     /* Transition setup */
-    background: -webkit-gradient(linear, left top, right top, from(#a2ccb6), color-stop(50%, #fceeb5), to(#ee786e));
     background: -o-linear-gradient(left, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#a2ccb6), color-stop(50%, #fceeb5), to(#ee786e));
     background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
     background-size: 500%;
     /* Button Shading */
@@ -115,6 +120,7 @@ button:hover {
     -webkit-animation-fill-mode: forwards;
 }
 
+/* Animation using keyframes */
 @-webkit-keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -152,19 +158,33 @@ button:hover {
 }
 
 /* No text decoration */
-#no_deco{
+#no_deco {
     text-decoration: none;
 }
 
-span #button_text{
+/* Customization for line 20 */
+span #button_text {
     margin: 0vh .5vh;
 }
 
-#question{
-    width: 50vh;
+/* Flex redesign */
+#question {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
-#question img{
+#question img {
     margin: 1vh 0vh;
     -webkit-box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
             box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
