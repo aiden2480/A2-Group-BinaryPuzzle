@@ -22,6 +22,7 @@ var grid = [];
 function loadGrid(g) { // 21/4/21 Aiden - Fills in the grid from a template
     grid = []; // Restart array when switching game
     var gridCol = []; 
+    var concatenation = "";
 
     // 30/4/21 Aiden - Convert 1D array to 2D
     for (let j = 0; j < row; j++) {
