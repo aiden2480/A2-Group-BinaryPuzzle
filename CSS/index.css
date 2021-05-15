@@ -3,24 +3,21 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway"); 
 
 body {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background: #ffecd9;
-    color: #424242;
-    padding: 1vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+    background: #ffecd9;
+    padding: 0.5vh;
+    color: #424242;
     font-family: 'Raleway', Sans-serif;
-    min-width: 100vh;
 }
 
 h1 {
@@ -46,12 +43,9 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 1vh 0vh;
 }
 
@@ -65,9 +59,6 @@ button  {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -96,7 +87,9 @@ button  {
     -ms-user-select: none;
     user-select: none;
     /* Box sizing and animation */
-    width: 22.5vh;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 2vh 0vh 1vh 0vh;
     cursor: pointer;
     animation-name: gradient_backwards;
@@ -163,8 +156,8 @@ button:hover {
 }
 
 /* Customization for line 20 */
-span #button_text {
-    margin: 0vh .5vh;
+#button_text {
+    margin: 0vh 1vh;
 }
 
 /* Flex redesign */
@@ -176,9 +169,6 @@ span #button_text {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -188,4 +178,6 @@ span #button_text {
     margin: 1vh 0vh;
     -webkit-box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
             box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    height: auto;
 }
