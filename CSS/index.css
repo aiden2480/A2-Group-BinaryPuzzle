@@ -39,6 +39,7 @@ a {
     font-size: 2.3vh;
 }
 
+/* Put h1 and h2 on the same line */
 #company {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -54,6 +55,7 @@ a {
     padding-right: 0.5vh;
 }
 
+/* GitHub Repo button */
 button  {
     /* Flex */
     display: -webkit-box;
@@ -76,7 +78,6 @@ button  {
     color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 4vh;
     font-size: 2.3vh;
     font-weight: 1px;
     letter-spacing: .05vh;
@@ -90,6 +91,7 @@ button  {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    height: 4vh;
     margin: 2vh 0vh 1vh 0vh;
     cursor: pointer;
     animation-name: gradient_backwards;
@@ -150,17 +152,20 @@ button:hover {
     }
 }
 
+button img {
+    margin-right: .2vh;
+}
+
+button span {
+    margin-right: 1.5vh;
+}
+
 /* No text decoration */
 #no_deco {
     text-decoration: none;
 }
 
-button img{
-    z-index: 5;
-    margin-right: .2vh;
-}
-
-/* Flex redesign */
+/* Question Flex redesign */
 #question {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -180,4 +185,20 @@ button img{
             box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.15);
     max-width: 100%;
     height: auto;
+}
+
+/* 
+Fix GitHub repo button by increasing height of the button, error collected from Safari on iPhone 7 and iPhone SE
+Changes is not visible on Chrome Device Toolbar toggle (Ctrl + Shift + M)
+Mobile device with width larger than 1000px may experience this error
+*/
+@media only screen and (max-width: 1000px) {
+    button {
+        height: fit-content;
+    }
+
+    button img, button span {
+        z-index: 5;
+        margin-right: 0.4vh;
+    }
 }
