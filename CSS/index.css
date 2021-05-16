@@ -155,9 +155,9 @@ button:hover {
     text-decoration: none;
 }
 
-/* Customization for line 20 */
-#button_text {
-    margin: 0vh 1vh;
+button img{
+    z-index: 5;
+    margin-right: .2vh;
 }
 
 /* Flex redesign */
