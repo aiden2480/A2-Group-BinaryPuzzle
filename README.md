@@ -11,6 +11,11 @@
 ## Licence
 This project is licensed under the [MIT licence](https://choosealicense.com/licenses/mit/#). This choice has been justified in the [Wiki tab](https://github.com/aiden2480/A2-UniTech-BinaryPuzzle/wiki).
 
+## Contact
+<div id="contact" align="center">
+    <img src="/images/businesscard.jpg" alt="Contact card">
+</div>
+
 ## When updating
  - [ ] Setup git
      - [ ] Switch to your individual branch with `git checkout name`
